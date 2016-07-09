@@ -22,7 +22,9 @@ module.exports = React.createClass({
   },
 
   render () {
+    console.log('hello')
     const childPages = config.docPages.map((p) => {
+      console.log('childPages running', p)
       const page = find(this.props.route.pages, (_p) => _p.path === p)
       return {
         title: page.data.title,
@@ -38,7 +40,8 @@ module.exports = React.createClass({
       </option>
 
     )
-    const docPages = childPages.map((child) => {
+    const guidePages = childPages.map((child) => {
+      console.log('hello')
       const isActive = prefixLink(child.path) === this.props.location.pathname
       return (
         <li
@@ -79,7 +82,7 @@ module.exports = React.createClass({
                 marginTop: rhythm(1/2),
               }}
             >
-              {docPages}
+              {guidePages}
             </ul>
           </div>
           <div

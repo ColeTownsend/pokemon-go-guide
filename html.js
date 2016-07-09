@@ -5,6 +5,7 @@ import { prefixLink } from 'gatsby-helpers'
 import { TypographyStyle } from 'typography-react'
 import typography from './utils/typography'
 import { colors } from 'utils/colors'
+import { config } from 'config'
 
 const BUILD_TIME = new Date().getTime()
 
@@ -29,6 +30,10 @@ module.exports = React.createClass({
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0 maximum-scale=5.0"
+          />
+          <meta
+            name="description"
+            content={config.siteDescription}
           />
           <title>{title}</title>
           <TypographyStyle typography={typography} />

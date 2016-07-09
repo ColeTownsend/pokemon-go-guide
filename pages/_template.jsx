@@ -76,7 +76,7 @@ module.exports = React.createClass({
                   Github
                 </a>
                 <Link
-                  to={prefixLink('/examples/')}
+                  to={prefixLink('/resources/')}
                   style={{
                     background: resourcesActive ? activeColors.bg : colors.bg,
                     color: resourcesActive ? activeColors.fg : colors.fg,
