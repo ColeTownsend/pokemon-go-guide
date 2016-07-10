@@ -1,4 +1,4 @@
 ---
-title: Pokestops
-description: "An introduction to Pokemon Go | Pokestops"
+title: Pokeball
+description: "An introduction to Pokemon Go | Pokeball"
 ---

@@ -9,7 +9,9 @@ module.exports = React.createClass({
     }
   },
   render () {
+    let analytics
     const post = this.props.route.page.data
+
 
     return (
       <div className="markdown">
@@ -29,7 +31,7 @@ module.exports = React.createClass({
               { name: 'description', content: post.description },
           ]}
           link={[
-            { rel: 'shortcut icon', href: '#{config.siteBaseUrl}/public/favicon.ico' }
+            { rel: 'shortcut icon', href: '#{config.siteBaseUrl}/public/favicon.ico' },
           ]}
         />
         <h1>{post.title}</h1>

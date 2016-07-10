@@ -1,4 +1,4 @@
 ---
-title: Pokestops
-description: "An introduction to Pokemon Go | Pokestops"
+title: Lure Module
+description: "An introduction to Pokemon Go | Lure Module"
 ---

@@ -13,3 +13,5 @@ Once a Pokestop is within range (that pulsing circle around the avatar), players
 
 ## Catching Pokemon
 Catching Pokemon yields a base experience of 200xp. There is a possible bonus experience for a total of 600xp if you catch a new Pokemon that is not in your Pokedex.
+
+## Eggs

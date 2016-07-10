@@ -1,4 +1,4 @@
 ---
-title: Pokestops
-description: "An introduction to Pokemon Go | Pokestops"
+title: Incense
+description: "An introduction to Pokemon Go | Incense"
 ---

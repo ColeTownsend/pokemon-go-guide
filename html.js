@@ -1,5 +1,4 @@
 import React from 'react'
-import DocumentTitle from 'react-document-title'
 import { prefixLink } from 'gatsby-helpers'
 import { TypographyStyle } from 'typography-react'
 import typography from './utils/typography'
@@ -23,7 +22,6 @@ module.exports = React.createClass({
 
   render () {
     let css
-    const title = DocumentTitle.rewind()
     let head = Helmet.rewind()
 
     if (process.env.NODE_ENV === 'production') {
@@ -58,18 +56,21 @@ module.exports = React.createClass({
                 `,
             }}
           />
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+              `
+              !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+              analytics.load("rYkns9pNk7wjyoe79YWsoJFMhlx4PYwz");
+              analytics.page()
+              }}();
+              `,
+            }}
+          />
         </head>
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
-          <script>
-            !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
-            arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
-            d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
-            insertBefore(d,q)}(window,document,'script','_gs');
-
-            _gs('GSN-754186-R');
-          </script>
         </body>
       </html>
     )
