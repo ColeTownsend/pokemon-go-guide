@@ -1,11 +1,11 @@
 import React from 'react'
 import DocumentTitle from 'react-document-title'
-
 import { prefixLink } from 'gatsby-helpers'
 import { TypographyStyle } from 'typography-react'
 import typography from './utils/typography'
 import { colors } from 'utils/colors'
 import { config } from 'config'
+import Helmet from 'react-helmet'
 
 const BUILD_TIME = new Date().getTime()
 
@@ -14,10 +14,18 @@ module.exports = React.createClass({
   propTypes: {
     body: React.PropTypes.string,
   },
-  render () {
-    const title = DocumentTitle.rewind()
 
+  getDefaultProps () {
+    return {
+      body: '',
+    }
+  },
+
+  render () {
     let css
+    const title = DocumentTitle.rewind()
+    let head = Helmet.rewind()
+
     if (process.env.NODE_ENV === 'production') {
       css = <style dangerouslySetInnerHTML={{ __html: require('!raw!./public/styles.css') }} />
     }
@@ -35,7 +43,10 @@ module.exports = React.createClass({
             name="description"
             content={config.siteDescription}
           />
-          <title>{title}</title>
+          <title>{head.title.toComponent()}</title>
+
+          {head.meta.toComponent()}
+          {head.link.toComponent()}
           <TypographyStyle typography={typography} />
           {css}
           <style
@@ -44,25 +55,6 @@ module.exports = React.createClass({
                 `
                   a {
                     color: ${colors.bg};
-                  }
-                  .ball-0 {
-                    background-image: url(${prefixLink('/docs/some-react-code/0.jpg')});
-                  }
-                  .ball-1 {
-                    background-image: url(${prefixLink('/docs/some-react-code/1.jpg')});
-                  }
-                  .ball-2 {
-                    background-image: url(${prefixLink('/docs/some-react-code/2.jpg')});
-                  }
-                  .ball-3 {
-                    background-image: url(${prefixLink('/docs/some-react-code/3.jpg')});
-                  }
-                  .ball-4 {
-                    background-image: url(${prefixLink('/docs/some-react-code/4.jpg')});
-                  }
-                  .ball-5 {
-                    background-image: url(${prefixLink('/docs/some-react-code/5.jpg')});
-                  }
                 `,
             }}
           />
@@ -70,6 +62,14 @@ module.exports = React.createClass({
         <body>
           <div id="react-mount" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
+          <script>
+            !function(g,s,q,r,d){r=g[r]=g[r]||function(){(r.q=r.q||[]).push(
+            arguments)};d=s.createElement(q);q=s.getElementsByTagName(q)[0];
+            d.src='//d1l6p2sc9645hc.cloudfront.net/tracker.js';q.parentNode.
+            insertBefore(d,q)}(window,document,'script','_gs');
+
+            _gs('GSN-754186-R');
+          </script>
         </body>
       </html>
     )

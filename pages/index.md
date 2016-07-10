@@ -1,74 +1,16 @@
 ---
-title: "AlphabetJS: The latest and greatest Javascript framework"
+title: The Pokemon Go Guide
+description: "An introduction to Pokemon Go"
 ---
 
-## Inops magnis Acrisius remisit Circes
+This is the comprehensive guide for Pokemon Go, the augmented-reality game for iOS and Android.
+Learn the best ways to can capture, battle, train, and trade Pokemon in the game. Tips and information is cited and references both the FAQ supplied by the Pokemon Company and user-sourced tips.
 
-Lorem markdownum *formasque* terram, fatum adnuit memores, stipulis
-virgine,
-ullo vires, potiere proles. Modo [nec Aesacon](http://gifctrl.com/) et
-vultum
-praeter fata gemitus panda. Factaque sibi repressit saltem, flammaeque
-ille per
-et opus flecti tellus inter: curru sidus. O iunxit ita erat, frondes,
-hac proles
-inritaturque?
 
-## Sed videt vestem vagatur
 
-Palato rubentis enim, ora fontes lunaria, ventis iacebant pariter. Illa
-latet
-primae concedimus factis, animo ab nec vagantem praemia sustollit.
-Secunda
-detque ecce, sua vixque fontes *quantam* aede.
+### From the App Store
+The app is [available for download in the app store](https://itunes.apple.com/au/app/pokemon-go/id1094591345?mt=8).
+> Venusaur, Charizard, Blastoise, Pikachu, and many other Pokémon have been discovered on planet Earth!
+Now’s your chance to discover and capture the Pokémon all around you—so get your shoes on, step outside, and explore the world. You’ll join one of three teams and battle for the prestige and ownership of Gyms with your Pokémon at your side.
 
-## Cuique in nullum futuri
-
-Amphitryoniaden sanguine et nefas lactentis iuvencae scit? Venis et dedi
-hoc
-thalamoque palmite fata, nec tot. Procorum super [patre aranea
-passis](http://reddit.com/r/thathappened) et regemque inque dedimus
-[haerent
-lumina ponunt](http://stoneship.org/), Rhodopeius lacertis! Conceperat
-tellus:
-hunc id nymphe en adest evolvere? Auro nescio extemplo triones et
-sceleratus
-queruntur inpavidus ab suos concutit, Ionio aut, de quo cinisque.
-
-```javascript
-horseSimplexWavelength += 2 + cookieFlat;
-if (dock_ftp_skyscraper(networking + 3, oleCookie / spywareDdl)) {
-    monitor_pci(opticalRedundancyFpu, name_browser(panel, 492892, 69), mouse);
-    motionBank(utility(83));
-} else {
-    goodput *= big(mountainLocalhostDimm, view_isdn,
-            dockingResponsiveMoodle);
-}
-if (activexWindowsToken(word_cdma) <= 86) {
-    hypertextReciprocal.skyscraper_record.archie(scriptWaisCd(
-            access_bar_parameter, mebibyte_spooling_vdu));
-} else {
-    web_plug_solid.restore += extension;
-}
-```
-
-## Diu fas tractaque Tethyn vidi exigere
-
-Aenea inque est flexo armos et bovis! Naides alta vocisque videt fit
-cervum
-elusam Macareus vicisse illis unguibus. Multorumque tumulo
-**praetemptatque
-occidit** ingentique et summas Nili virgo vaticinata facinus positae
-vestes,
-*exstinguere iuvat* Lycaona postquam.
-
-- Multaque in coloque
-- Emicuit errandum
-- Mitior ego verbis interdum occupat feruntur
-- Parili Meleagros fluit et timorem
-
-Gemit petit, cingentia quis carens, duxere es sortem corpora quamvis?
-**Palmis
-visa**, nec deo fuit Amphissos, et sprevere Acmona illa habuissem
-**asper**. Et
-[nemus](http://reddit.com/r/thathappened) Iunone: et deae!
+> Pokémon are out there, and you need to find them. As you walk around a neighborhood, your smartphone will vibrate when there’s a Pokémon nearby. Take aim and throw a Poké Ball… You’ll have to stay alert, or it might get away!

@@ -1,29 +1,72 @@
 import React from 'react'
 import { Link } from 'react-router'
-import { Container, Grid, Span } from 'react-responsive-grid'
+import Breakpoint from 'components/Breakpoint'
+import find from 'lodash/find'
 import { prefixLink } from 'gatsby-helpers'
-import includes from 'underscore.string/include'
-import { colors, activeColors } from 'utils/colors'
-
-import typography from 'utils/typography'
 import { config } from 'config'
+import typography from 'utils/typography'
+const { rhythm } = typography
+import { Container, Grid, Span } from 'react-responsive-grid'
+import { colors } from 'utils/colors'
 
 // Import styles.
 import 'css/main.css'
-import 'css/github.css'
 
-const { rhythm, fontSizeToPx } = typography
 
 module.exports = React.createClass({
   propTypes () {
     return {
-      children: React.PropTypes.object,
+      route: React.PropTypes.object,
     }
   },
-  render () {
-    const guideActive = includes(this.props.location.pathname, '/guide/')
-    const resourcesActive = includes(this.props.location.pathname, '/resources/')
+  contextTypes: {
+    router: React.PropTypes.object.isRequired,
+  },
+  handleTopicChange (e) {
+    return this.context.router.push(e.target.value)
+  },
 
+  render () {
+    const childPages = config.docPages.map((p) => {
+      const page = find(this.props.route.pages, (_p) => _p.path === p)
+      return {
+        title: page.data.title,
+        path: page.path,
+      }
+    })
+    const docOptions = childPages.map((child) =>
+      <option
+        key={prefixLink(child.path)}
+        value={prefixLink(child.path)}
+      >
+        {child.title}
+      </option>
+
+    )
+    const guidePages = childPages.map((child) => {
+      const isActive = prefixLink(child.path) === this.props.location.pathname
+      return (
+        <li
+          key={child.path}
+          style={{
+            marginBottom: rhythm(1/4),
+            paddingLeft: rhythm(1),
+            paddingRight: rhythm(1),
+            fontWeight: '500',
+          }}
+        >
+          <Link
+            to={prefixLink(child.path)}
+            style={{
+              textDecoration: 'none',
+              color: isActive ? '#1DAD90' : '#24CCAA',
+            }}
+          >
+            {child.title}
+          </Link>
+        </li>
+      )
+    })
     return (
       <div>
         <div
@@ -31,6 +74,7 @@ module.exports = React.createClass({
             background: colors.bg,
             color: colors.fg,
             marginBottom: rhythm(1.5),
+            fontSize: '20px',
           }}
         >
           <Container
@@ -47,67 +91,35 @@ module.exports = React.createClass({
               }}
             >
               <Span
-                columns={4}
-                style={{
-                  height: 24, // Ugly hack. How better to constrain height of div?
-                }}
+                columns={6}
               >
                 <Link
                   to={prefixLink('/')}
                   style={{
                     textDecoration: 'none',
-                    color: colors.fg,
-                    fontSize: fontSizeToPx('25.5px').fontSize,
+                    color: '#fff',
+                    fontWeight: '600',
                   }}
                 >
                   {config.siteTitle}
                 </Link>
               </Span>
-              <Span columns={8} last>
-                <a
+              <Span
+                columns={6} last
+                style={{
+                  textAlign: 'right',
+                  display: 'inline-block',
+                }}
+              >
+                <Link
+                  to={prefixLink('https://twnsnd.co')}
                   style={{
-                    float: 'right',
+                    textDecoration: 'none',
                     color: colors.fg,
-                    textDecoration: 'none',
-                    marginLeft: rhythm(1/2),
-                  }}
-                  href="https://github.com/gatsbyjs/gatsby"
-                >
-                  Github
-                </a>
-                <Link
-                  to={prefixLink('/resources/')}
-                  style={{
-                    background: resourcesActive ? activeColors.bg : colors.bg,
-                    color: resourcesActive ? activeColors.fg : colors.fg,
-                    float: 'right',
-                    textDecoration: 'none',
-                    paddingLeft: rhythm(1/2),
-                    paddingRight: rhythm(1/2),
-                    paddingBottom: rhythm(1),
-                    marginBottom: rhythm(-1),
-                    paddingTop: rhythm(1),
-                    marginTop: rhythm(-1),
+                    fontSize: '15px',
                   }}
                 >
-                  Resources
-                </Link>
-                <Link
-                  to={prefixLink('/guide/')}
-                  style={{
-                    background: guideActive ? activeColors.bg : colors.bg,
-                    color: guideActive ? activeColors.fg : colors.fg,
-                    float: 'right',
-                    textDecoration: 'none',
-                    paddingLeft: rhythm(1/2),
-                    paddingRight: rhythm(1/2),
-                    paddingBottom: rhythm(1),
-                    marginBottom: rhythm(-1),
-                    paddingTop: rhythm(1),
-                    marginTop: rhythm(-1),
-                  }}
-                >
-                  Guide
+                  Made by @twnsndco
                 </Link>
               </Span>
             </Grid>
@@ -115,13 +127,88 @@ module.exports = React.createClass({
         </div>
         <Container
           style={{
-            maxWidth: 720,
-            padding: `${rhythm(2)} ${rhythm(4)}`,
+            maxWidth: 960,
+            padding: `${rhythm(1)} ${rhythm(1/2)}`,
           }}
         >
-          {this.props.children}
+          <div>
+            <Breakpoint
+              mobile
+            >
+              <div
+                style={{
+                  backgroundColor: '#ffffff',
+                  overflowY: 'auto',
+                  marginRight: `calc(${rhythm(1)} - 1px)`,
+                  position: 'absolute',
+                  boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.04)',
+                  borderRadius: '4px',
+                }}
+              >
+                <div
+                  style={{
+                    marginLeft: 0,
+                    marginTop: 0,
+                    padding: '4px 0',
+                    paddingLeft: rhythm(1),
+                    paddingRight: rhythm(1),
+                    backgroundColor: '#FFF2C9',
+                    border: '1px solid #EDCE6D',
+                    borderRadius: '4px 4px 0px 0px',
+                    color: '#EAB200',
+                    fontSize: '15px',
+                  }}
+                  className="article"
+                >
+                  Topics
+                </div>
+                <ul
+                  style={{
+                    paddingTop: rhythm(1/2),
+                    listStyle: 'none',
+                    margin: 0,
+                    border: '1px solid #E9E9E9',
+                    borderTop: '0',
+                    borderRadius: '0px 0px 4px 4px',
+                    paddingBottom: `${rhythm(1/2)}`,
+                    fontSize: '15px',
+                  }}
+                >
+                  {guidePages}
+                </ul>
+              </div>
+              <div
+                style={{
+                  marginLeft: `calc(${rhythm(8)} + ${rhythm(1)})`,
+                  backgroundColor: '#fff',
+                }}
+              >
+                <div
+                  style={{
+                    padding: `${rhythm(2)} ${rhythm(2)}`,
+                  }}
+                >
+                  {this.props.children}
+                </div>
+              </div>
+            </Breakpoint>
+            <Breakpoint>
+              <strong>Topics:</strong>
+              {' '}
+              <select
+                defaultValue={this.props.location.pathname}
+                onChange={this.handleTopicChange}
+              >
+                {docOptions}
+              </select>
+              <br />
+              <br />
+              {this.props.children}
+            </Breakpoint>
+          </div>
         </Container>
       </div>
+
     )
   },
 })

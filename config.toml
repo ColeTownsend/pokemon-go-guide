@@ -1,11 +1,12 @@
 siteTitle="The Pokemon Go Guide"
-siteDescription="The comprehensive how-to guide for playing the iPhone and Android game Pokemon Go."
+siteDescription="The comprehensive how-to guide for playing the iPhone and Android app game Pokemon Go."
 baseColor = "#24CCAA"
-linkPrefix = ""
+linkPrefix = "/"
+siteBaseUrl = "http://pokemongoguide.us"
 docPages = [
-  "/guide/",
-  "/guide/getting-started/",
-  "/guide/how-to-catch-pokemon/",
-  "/guide/how-to-track-pokemon/",
-  "/guide/how-to-train-pokemon/",
+  "/",
+  "/getting-started/",
+  "/how-to-catch-pokemon/",
+  "/how-to-track-pokemon/",
+  "/how-to-train-pokemon/",
 ]
