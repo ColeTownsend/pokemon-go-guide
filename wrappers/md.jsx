@@ -9,9 +9,7 @@ module.exports = React.createClass({
     }
   },
   render () {
-    let analytics
     const post = this.props.route.page.data
-
 
     return (
       <div className="markdown">

@@ -1,6 +1,6 @@
 ---
 title: The Pokemon Go Guide
-description: "An introduction to Pokemon Go"
+description: "he comprehensive how-to guide for playing the iPhone and Android app game Pokemon Go."
 ---
 
 This is the comprehensive guide for Pokemon Go, the augmented-reality game for iOS and Android.

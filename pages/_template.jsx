@@ -112,7 +112,7 @@ module.exports = React.createClass({
                 }}
               >
                 <Link
-                  to={prefixLink('https://twnsnd.co')}
+                  to={'https://twnsnd.co'}
                   style={{
                     textDecoration: 'none',
                     color: colors.fg,

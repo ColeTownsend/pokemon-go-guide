@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-description: "An introduction to Pokemon Go"
+description: "he comprehensive how-to guide for playing the iPhone and Android app game Pokemon Go."
 ---
 
 Note that this game uses a lot of data. It is recommended that you have at least 1gb per month available for steady playing. You may use wifi but the shorter range will limit you.

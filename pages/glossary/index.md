@@ -1,7 +1,6 @@
 ---
-title: Pokemon Go Terms
+title: Glossary
 description: "An guide to Pokemon Go terms and vocabulary"
-
 ---
 
 ##### <a href="/glossary/cp/">CP</a>
