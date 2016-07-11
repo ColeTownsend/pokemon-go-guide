@@ -3,8 +3,8 @@ import Typography from 'typography'
 const options = {
   baseFontSize: '17px',
   baseLineHeight: '28px',
-  bodyFontFamily: ['HK Compakt', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
-  headerFontFamily: ['HK Compakt', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+  bodyFontFamily: ['HK Compakt', 'system', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
+  headerFontFamily: ['HK Compakt', 'system', '-apple-system', 'BlinkMacSystemFont',, 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
   bodyWeight: 400,
   headerGray: 5,
   headerGrayHue: 120,
