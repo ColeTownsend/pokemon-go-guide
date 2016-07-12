@@ -10,10 +10,18 @@ blockquote {
 h6 {
   font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.05rem;
   margin-bottom: 0.5rem;
-  color: #666666;
+  color: #fff;
+  font-weight: 500;
+  padding: 0.4em .5em;
+  line-height: 1em;
+  border-radius: 4px;
+  display: inline-block;
+  width: auto;
+  background-image: linear-gradient(-90deg, #24CCAA 0%, #A2DB95 100%);
+
 }
 
 h1,h2,h3,h4,h5 {

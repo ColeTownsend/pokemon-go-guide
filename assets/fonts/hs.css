@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Hanken Sans';
+  src: url('./hankensans-bold.woff2') format('woff2'),
+       url('./hankensans-bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hanken Sans';
+  src: url('./hankensans-light.woff2') format('woff2'),
+       url('./hankensans-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hanken Sans';
+  src: url('./hankensans-medium.woff2') format('woff2'),
+       url('./hankensans-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hanken Sans';
+  src: url('./hankensans-regular.woff2') format('woff2'),
+       url('./hankensans-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}

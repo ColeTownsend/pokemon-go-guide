@@ -41,7 +41,7 @@ module.exports = React.createClass({
             name="description"
             content={config.siteDescription}
           />
-          <link rel="icon" href="http://pokemongoguide.us/favicon.ico" />
+          <link rel="icon" href="//pokemongotips.co/favicon.ico" />
           <title>{head.title.toComponent()}</title>
 
           {head.meta.toComponent()}

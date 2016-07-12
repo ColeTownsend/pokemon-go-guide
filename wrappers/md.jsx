@@ -1,6 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { config } from 'config'
+import catchLinks from 'catch-links'
 
 module.exports = React.createClass({
   propTypes () {
@@ -8,6 +9,20 @@ module.exports = React.createClass({
       route: React.PropTypes.object,
     }
   },
+  contextTypes () {
+    return {
+      router: React.PropTypes.object.isRequired,
+    }
+  },
+  componentDidMount () {
+    console.log("mounted!")
+    const _this = this
+    catchLinks(this.refs.markdown, href => {
+      console.log("catching links")
+      _this.context.router.push(href)
+    })
+  },
+
   render () {
     const post = this.props.route.page.data
 
@@ -29,7 +44,7 @@ module.exports = React.createClass({
               { name: 'description', content: post.description },
           ]}
           link={[
-            { rel: 'shortcut icon', href: '#{config.siteBaseUrl}/public/favicon.ico' },
+            { rel: 'shortcut icon', href: config.siteBaseUrl + '/public/favicon.ico' },
           ]}
         />
         <h1>{post.title}</h1>

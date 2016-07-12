@@ -11,6 +11,7 @@ import { colors } from 'utils/colors'
 
 // Import styles.
 import 'css/main.css'
+import '../assets/fonts/hs.css'
 
 
 module.exports = React.createClass({
@@ -112,7 +113,20 @@ module.exports = React.createClass({
                 }}
               >
                 <Link
-                  to={'https://twnsnd.co'}
+                  to={prefixLink('/about/')}
+                  style={{
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    color: colors.fg,
+                    fontSize: '15px',
+                    marginRight: '30px',
+                  }}
+                >
+                  About
+                </Link>
+                <a
+                  href="https://twnsnd.co"
+                  target="_blank"
                   style={{
                     textDecoration: 'none',
                     color: colors.fg,
@@ -120,7 +134,7 @@ module.exports = React.createClass({
                   }}
                 >
                   Made by @twnsndco
-                </Link>
+                </a>
               </Span>
             </Grid>
           </Container>

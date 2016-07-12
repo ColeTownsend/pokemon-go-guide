@@ -1,5 +1,5 @@
 ---
-title: How to train Pokemon
+title: Training your pokemon
 description: "The best tips and hacks for training Pokemon in Pokemon Go for iPhone and Android."
 
 ---
