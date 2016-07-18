@@ -11,6 +11,7 @@ import { colors } from 'utils/colors'
 
 // Import styles.
 import 'css/main.css'
+import navStyles from 'css/Nav.module.css'
 import '../assets/fonts/hs.css'
 
 
@@ -71,6 +72,7 @@ module.exports = React.createClass({
     return (
       <div>
         <div
+          className={navStyles.mainNav}
           style={{
             background: colors.bg,
             color: colors.fg,
