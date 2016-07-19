@@ -9,5 +9,5 @@ Capture the same type Pokemon to earn Stardust and Candy. Each Pokemon require d
 ## Evolving a Pokemon
 Usually Pokemon require a set number of Candies to evolve. Follow the same steps outlined above to acquire Candy.
 
-##### PRO TIP
+###### PRO TIP
 See how much CP your pokemon will go up: http://evolutioncalculator.com/
