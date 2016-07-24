@@ -12,88 +12,86 @@ let pokemonArray
 
 function setSelectOptions () {
   for (const pokemonObj of pokemonArray) {
-    console.log(pokemonObj.pokemon)
     options.push({ value: `${pokemonObj.pokemon}-${uniqueId()}`, label: pokemonObj.pokemon })
   }
-  console.log('options', options)
 }
 
-class Calculator extends React.Component {
-  constructor () {
-    super()
-    this.onPokemonChange = this.onPokemonChange.bind(this)
-    this.onCPChange = this.onCPChange.bind(this)
-  }
+function saveInfo (data) {
+  pokemonArray = data
+  setSelectOptions()
+  console.log(options)
+}
 
+Tabletop.init(
+  { key: publicUrl,
+    callback: saveInfo,
+    simpleSheet: true,
+    parseNumbers: true,
+  }
+)
+
+const Calculator = React.createClass({
   getInitialState () {
     return {
-      pokemon: null,
+      pokemon: '',
       cp: null,
-      level: null,
+      evolvedCP: null,
     }
-  }
-  componentWillMount () {
-    Tabletop.init(
-      { key: publicUrl,
-        callback: this.saveInfo,
-        simpleSheet: true,
-        parseNumbers: true,
-      }
-    )
-  }
-
-  getMultiplier (pokemonToFind) {
-    const pokemonObj = find(pokemonArray, { pokemon: pokemonToFind.toLowerCase() })
-    return pokemonObj.multiplier
-  }
-
-  saveInfo (data, tabletop) {
-    pokemonArray = data
-    setSelectOptions()
-  }
+  },
 
   onPokemonChange (value) {
-    const pokemon = value ? value.split('-')[0] : ''
-    this.setState({pokemon})
-    console.log('pokemon selected', pokemon)
-  }
+    this.setState({ pokemon: value.split('-')[0] })
+    console.log(this.state.pokemon)
+  },
 
   onCPChange (event) {
-    console.log(event.target.value)
     this.setState({ cp: event.target.value })
-    console.log('cp', this.state.cp)
-  }
-
-  calculateCP (inputCP, multiplier) {
-    return inputCP * multiplier
-  }
+    console.log('cp', event.target.value)
+    this.setCPResult()
+  },
 
   getPokemon () {
     return map(pokemonArray, 'pokemon')
-  }
+  },
 
-  renderResult () {
+  getMultiplier (pokemonToFind) {
+    console.log(this.state.pokemon, pokemonToFind)
+    const pokemonObj = find(pokemonArray, { pokemon: pokemonToFind })
+    console.log(pokemonObj)
+    return pokemonObj.multiplier
+  },
+
+  calculateCP (inputCP, multiplier) {
+    return inputCP * multiplier
+  },
+
+  setCPResult () {
+    console.log('testing')
     const pokemon = this.state.pokemon
-    return (
-      <h1>{this.calculateCP(this.state.cp, this.getMultiplier(pokemon))}</h1>
-    )
-  }
+    const evolvedCP = this.calculateCP(this.state.cp, this.getMultiplier(pokemon))
+    this.setState({evolvedCP})
+    console.log(evolvedCP)
+  },
 
   render () {
     return (
       <div>
         <Select
           name="pokemon"
+          placeholder="Select a Pokemon"
           options={options}
+          value={this.state.pokemon}
           onChange={this.onPokemonChange}
         />
         <div>
           <input type="text" name="cp" onChange={this.onCPChange} />
         </div>
-        <h1>{this.renderResult}</h1>
+        <h1 className="evolved-cp">
+          {this.state.evolvedCP || ""}
+        </h1>
       </div>
     )
-  }
-}
+  },
+})
 
 export default Calculator
